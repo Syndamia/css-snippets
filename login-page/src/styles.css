@@ -1,3 +1,5 @@
+/* Global */
+
 :root {
   --focus-color: forestgreen;
 }
@@ -14,6 +16,8 @@ body {
 form {
   width: 100%;
 }
+
+/* Styling of simple elements */
 
 #content {
 	height: 100%;
@@ -53,62 +57,17 @@ form {
   padding: 0.3em;
 }
 
-#content input[type=text]:nth-last-of-type(1) {
-  
-}
-
 input:focus, button:focus {
   outline: 0;
 }
-
-.input-selection {
-  position: relative;
-  margin-top: 0.7em;
-}
-
-.input-selection label {
-  transition: 0.2s;
-  width: inherit;
-  height: inherit;
-  position: absolute;
-  margin-top: 0.4em;
-  scale: 1em;
-  color: grey;
-  left: 0;
-}
-
-.input-selection input::-webkit-input-placeholder {
-  opacity: 0;
-}
-
-.input-selection:hover > label, 
-.input-selection > input:not(:placeholder-shown) + label,
-.input-selection > input:focus + label {
-  font-size: 0.7em;
-  transition: 0.2s;
-  transform: translate(0, -1.2em);
-  color: var(--focus-color);
-}
-
-.input-selection:hover > input::-webkit-input-placeholder, 
-.input-selection > input:focus::-webkit-input-placeholder {
-  opacity: 1;
-}
-
-.input-selection:hover > input, 
-.input-selection > input:focus {
-  border-color: var(--focus-color) !important;
-  caret-color: var(--focus-color);
-  border-width: 2px !important;
-  margin-top: -1px !important;
-}
-
 
 #content hr {
 	width: 100%;
 	border: 1px solid black;
 	box-sizing: border-box;
 }
+
+/* Where the magic happens */
 
 #submit-btn {
   transition: 0.2s;
@@ -128,3 +87,49 @@ input:focus, button:focus {
   transition: 0s;
   transform: scale(0.9);
 }
+
+.input-selection {
+  position: relative;
+  margin-top: 0.7em;
+}
+
+.input-selection label {
+  transition: 0.2s;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  margin-top: 0.4em;
+  scale: 1em;
+  color: grey;
+  left: 0;
+}
+
+.input-selection input::-webkit-input-placeholder {
+  /* Don't show the placeholder when the label is on top */
+  opacity: 0;
+}
+
+.input-selection:hover > label, 
+.input-selection > input:not(:placeholder-shown) + label,
+.input-selection > input:focus + label {
+  /* When hovering, typing or having typed something in an input, 
+   * make the label smaller, color it and then move it up
+   */
+  font-size: 0.7em;
+  color: var(--focus-color);
+  transform: translate(0, -1.2em);
+}
+
+.input-selection:hover > input::-webkit-input-placeholder, 
+.input-selection > input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.input-selection:hover > input, 
+.input-selection > input:focus {
+  border-color: var(--focus-color) !important;
+  caret-color: var(--focus-color);
+  border-width: 2px !important;
+  margin-top: -1px !important;
+}
+
