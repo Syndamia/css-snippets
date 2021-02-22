@@ -38,11 +38,11 @@ body {
   display: none;
 }
 
-#content>* {
+#content > * {
   width: 100%;
 }
 
-#content>hr {
+#content > hr {
   border-color: var(--font-color);
 }
 
@@ -72,7 +72,7 @@ body {
   display: flex;
 }
 
-#info>* {
+#info > * {
   flex: 1;
 }
 
@@ -110,15 +110,15 @@ body {
   flex-direction: column;
 }
 
-.card-content>.card {
+.card-content > .card {
   margin-top: 1em;
 }
 
-.card-content>.card>.card-title {
+.card-content > .card > .card-title {
   width: 24%;
 }
 
-.card-content>.card:first-child {
+.card-content > .card:first-child {
   margin-top: 0;
 }
 
