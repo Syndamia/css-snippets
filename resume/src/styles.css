@@ -137,15 +137,16 @@ body {
 }
 
 .rating {
-  width: 50%;
+  flex: 1;
+  min-width: 50%;
   display: flex;
   flex-direction: column;
-  margin-bottom: .7em;
+  margin-bottom: 1em;
 }
 
 .rating-title {
   font-weight: bold;
-  margin-right: 1em;
+  margin-right: .5em;
 }
 
 .rating-amount {
