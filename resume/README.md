@@ -27,7 +27,7 @@ Cards are the main type of element. Each card is as wide as it can be and it con
 Sample usage:
 ```html
 <div class="card">
-	<div class="card-title section-title">
+	<div class="card-title">
 		About Me
 	</div>
 	<div class="card-content">
@@ -44,7 +44,7 @@ You can also add a special title inside the content part of a card. It will be b
 Sample usage:
 ```html
 <div class="card">
-	<div class="card-title section-title">
+	<div class="card-title">
 		About Me
 	</div>
 	<div class="card-content">
