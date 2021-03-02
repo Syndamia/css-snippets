@@ -1,6 +1,7 @@
 This is a small template for making resumes. Edit the HTML and CSS with your values and then print it to a PDF file **(WITH AN A4 SIZE OF PAPER)**. What you see should be the same as what you get after printing (open an issue if you've found a discrpetancy!).
 
 ![](./screenshots/preview.png)
+*The sample profile picture is taken from [thispersondoesnotexist.com](https://thispersondoesnotexist.com/)*
 
 # CSS classes
 
