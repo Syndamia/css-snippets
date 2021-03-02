@@ -1,0 +1,109 @@
+/* Global */
+
+:root {
+  --focus-color: forestgreen;
+  --input-margin: 0.4em;
+  --transition-duration: 0.2s;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font: 21px sans-serif;
+  background-color: white;
+}
+
+/* Core style */
+
+form {
+  height: 100%;
+  max-width: 20em;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Align inputs vertically and
+   * center them vertically and horizontally
+   */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form > section {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+
+  border: 0;
+  border-bottom: 1px solid grey;
+  padding: 0.4em;
+  padding-left: 0;
+
+  box-sizing: border-box;
+  font-size: inherit;
+  margin-bottom: 0.5em;
+}
+
+input:focus, button:focus {
+  outline: 0;
+}
+
+/* Where the magic happens */
+
+.input-selection {
+  position: relative;
+  margin-top: 0.7em;
+}
+
+.input-selection label {
+  transition: var(--transition-duration);
+  width: inherit;
+  height: inherit;
+
+  position: absolute;
+  margin-top: var(--input-margin);
+  scale: 1em;
+  color: grey;
+  left: 0;
+}
+
+.input-selection input::placeholder {
+  /* Don't show the placeholder when the label is on top */
+  opacity: 0;
+  color: grey;
+}
+
+.input-selection:hover > input::placeholder, 
+.input-selection > input:focus::placeholder {
+  /* When hovering on the input, or when having clicked on it,
+   * show the placeholder
+   */
+  opacity: 1;
+}
+
+.input-selection:hover > label, 
+.input-selection > input:not(:placeholder-shown) + label,
+.input-selection > input:focus + label {
+  /* When hovering, typing or having typed something in an input, 
+   * make the label smaller, color it and then move it up
+   */
+  font-size: 0.7em;
+  color: var(--focus-color);
+  transform: translate(0, -1.2em);
+}
+
+.input-selection:hover > input,
+.input-selection > input:focus {
+  /* When hovering or clicked on it, make it the focus color */
+  border-color: var(--focus-color) !important;
+  caret-color: var(--focus-color);
+  /* When hovering or clicked on it, make the bottom border wider (taller) */
+  border-width: 2px !important;
+  padding-bottom: calc(var(--input-margin) - 1px) !important;
+}
